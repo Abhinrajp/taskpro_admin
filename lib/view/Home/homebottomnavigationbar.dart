@@ -18,25 +18,25 @@ class Homebottomnavigationbar extends StatefulWidget {
 
 class _HomebottomnavigationbarState extends State<Homebottomnavigationbar>
     with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<Color?> colorAnimation;
-  @override
-  void initState() {
-    super.initState();
-    controller = AnimationController(
-      duration: const Duration(seconds: 2),
-      vsync: this,
-    )..repeat(reverse: true);
-    colorAnimation =
-        ColorTween(begin: const Color(0xFFFFD700), end: Colors.grey)
-            .animate(controller);
-  }
+  // late AnimationController controller;
+  // late Animation<Color?> colorAnimation;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   controller = AnimationController(
+  //     duration: const Duration(seconds: 2),
+  //     vsync: this,
+  //   )..repeat(reverse: true);
+  //   colorAnimation =
+  //       ColorTween(begin: const Color(0xFFFFD700), end: Colors.grey)
+  //           .animate(controller);
+  // }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   controller.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

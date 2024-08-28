@@ -85,7 +85,7 @@ class FetchdataStreambuilder extends StatelessWidget {
                 padding: EdgeInsets.only(right: 8, top: 2, bottom: 2, left: 8),
                 child: ShimmerCardforresultlistview(),
               ),
-              itemCount: 20,
+              itemCount: 5,
             );
           }
         });

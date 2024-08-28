@@ -44,37 +44,26 @@ class _HomescreenState extends State<Homescreen>
             body: Column(children: [
               const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 90, left: 15),
-                  child: Textwidget(
-                    text: 'Admin',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
-                )
+                    padding: EdgeInsets.only(top: 90, left: 15),
+                    child: Textwidget(
+                        text: 'Admin',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey))
               ]),
               const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Textwidget(
-                      text: 'taskpro',
-                      fontWeight: FontWeight.bold,
-                      fontsise: 26,
-                      color: Colors.white),
-                )
+                    padding: EdgeInsets.only(left: 15),
+                    child: Textwidget(
+                        text: 'taskpro',
+                        fontWeight: FontWeight.bold,
+                        fontsise: 26,
+                        color: Colors.white))
               ]),
               Expanded(
                   child: FetchdataStreambuilder(
-                colorAnimation: colorAnimation,
-                messg: 'No New Requests',
-                statusvariable: 'registerd',
-              ))
+                      colorAnimation: colorAnimation,
+                      messg: 'No New Requests',
+                      statusvariable: 'registerd'))
             ])));
   }
-
-  List<String> listofstring = ['Home', 'Lists', 'History'];
-  List<IconData> listoficon = [
-    Icons.home_rounded,
-    Icons.list_alt_outlined,
-    Icons.history_rounded
-  ];
 }

@@ -31,54 +31,52 @@ class _HistoryscreenState extends State<Historyscreen> {
                     fontWeight: FontWeight.bold),
                 centerTitle: true),
             body: Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: StreamBuilder(
-                  stream: FirebaseFirestore.instance
-                      .collection('workers')
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.active) {
-                      if (snapshot.hasData) {
-                        var newworkers = snapshot.data!.docs;
-                        return ListView.builder(
-                          itemBuilder: (context, index) {
-                            var workerData = newworkers[index].data();
-                            return Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 8, top: 2, bottom: 2, left: 8),
-                                child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Profilescreen(
-                                                    workerData: workerData,
-                                                  )));
-                                    },
-                                    child: Cardforresultlistview(
-                                        statuschek: 'history',
-                                        wokerdata: workerData)));
-                          },
-                          itemCount: newworkers.length,
-                        );
-                      } else if (snapshot.hasError) {
-                        return Center(
-                            child: Text(snapshot.hasError.toString()));
+                padding: const EdgeInsets.only(top: 20),
+                child: StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection('workers')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.active) {
+                        if (snapshot.hasData) {
+                          var newworkers = snapshot.data!.docs;
+                          return ListView.builder(
+                              itemBuilder: (context, index) {
+                                var workerData = newworkers[index].data();
+                                return Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 8, top: 2, bottom: 2, left: 8),
+                                    child: GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Profilescreen(
+                                                          workerData:
+                                                              workerData)));
+                                        },
+                                        child: Cardforresultlistview(
+                                            statuschek: 'history',
+                                            wokerdata: workerData)));
+                              },
+                              itemCount: newworkers.length);
+                        } else if (snapshot.hasError) {
+                          return Center(
+                              child: Text(snapshot.hasError.toString()));
+                        } else {
+                          return Center(
+                              child: Column(children: [
+                            const Textwidget(
+                                text: 'No Requests',
+                                fontWeight: FontWeight.bold,
+                                fontsise: 18),
+                            Image.asset('lib/assets/no-data.png')
+                          ]));
+                        }
                       } else {
-                        return Center(
-                            child: Column(children: [
-                          const Textwidget(
-                              text: 'No Requests',
-                              fontWeight: FontWeight.bold,
-                              fontsise: 18),
-                          Image.asset('lib/assets/no-data.png')
-                        ]));
+                        return const Center(child: CircularProgressIndicator());
                       }
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  }),
-            )));
+                    }))));
   }
 }
