@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -38,6 +40,7 @@ class _HistoryscreenState extends State<Historyscreen> {
                         .snapshots(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.active) {
+                        log('connection actived in history screen');
                         if (snapshot.hasData) {
                           var newworkers = snapshot.data!.docs;
                           return ListView.builder(
@@ -75,6 +78,7 @@ class _HistoryscreenState extends State<Historyscreen> {
                           ]));
                         }
                       } else {
+                        log('connection is waiting in history screen');
                         return const Center(child: CircularProgressIndicator());
                       }
                     }))));

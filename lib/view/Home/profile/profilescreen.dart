@@ -55,31 +55,47 @@ class Profilescreen extends StatelessWidget {
           Textwidget(
               text: workerData['firstName'] + ' ' + workerData['lastName'],
               fontWeight: FontWeight.bold,
-              fontsise: 25),
+              fontsise: 45),
           const SizedBox(height: 5),
-          Textwidget(text: workerData['workType'], fontWeight: FontWeight.bold),
+          Textwidget(
+              text: workerData['workType'],
+              fontWeight: FontWeight.bold,
+              fontsise: 33),
           const SizedBox(height: 20),
-          Textwidget(text: workerData['email'], color: Colors.black54),
-          const SizedBox(height: 10),
-          Textwidget(text: workerData['phoneNumber'], color: Colors.black54),
+          Textwidget(
+              text: workerData['email'], color: Colors.black54, fontsise: 33),
           const SizedBox(height: 10),
           Textwidget(
-              text: workerData['maxQualification'], color: Colors.black54),
+              text: workerData['phoneNumber'],
+              color: Colors.black54,
+              fontsise: 33),
+          const SizedBox(height: 10),
+          Textwidget(
+              text: workerData['maxQualification'],
+              color: Colors.black54,
+              fontsise: 33),
           const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.only(left: 8, right: 8),
-            child:
-                Textwidget(text: workerData['location'], color: Colors.black54),
+            child: Textwidget(
+                text: workerData['location'],
+                color: Colors.black54,
+                fontsise: 33),
           ),
           const SizedBox(height: 40),
-          const Textwidget(text: 'About', fontWeight: FontWeight.bold),
+          const Textwidget(
+              text: 'About', fontWeight: FontWeight.bold, fontsise: 33),
           const SizedBox(height: 20),
           SizedBox(
-              width: 250,
-              child: Textwidget(
-                  text: workerData['about'],
-                  textAlign: TextAlign.left,
-                  color: Colors.black54)),
+              width: 560,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Textwidget(
+                    text: workerData['about'],
+                    textAlign: TextAlign.left,
+                    color: Colors.black54,
+                    fontsise: 33),
+              )),
           const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

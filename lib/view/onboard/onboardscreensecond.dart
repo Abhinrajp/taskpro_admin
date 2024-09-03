@@ -10,17 +10,18 @@ class Onboardscreensecond extends StatelessWidget {
       body: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.only(top: 120, left: 140),
+            padding: EdgeInsets.only(top: 120),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                SizedBox(),
                 Text(
                   'taskpro',
                   style: TextStyle(
                       color: primarycolour, fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 80),
+                  padding: EdgeInsets.zero,
                   child: Text('skip >', style: TextStyle(fontSize: 11)),
                 )
               ],
@@ -40,7 +41,8 @@ class Onboardscreensecond extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          Image.asset('lib/assets/onboard-second.png'),
+          SizedBox(
+              height: 360, child: Image.asset('lib/assets/onboard-second.png')),
         ],
       ),
     );

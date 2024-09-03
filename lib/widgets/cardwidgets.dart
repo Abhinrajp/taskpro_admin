@@ -32,9 +32,18 @@ class Cardforresultlistview extends StatelessWidget {
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               barcontainer(statuschek),
               const SizedBox(width: 11),
-              CircleAvatar(
-                  maxRadius: 40,
-                  backgroundImage: NetworkImage(wokerdata['profileImageUrl'])),
+              Stack(children: [
+                const CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage:
+                        AssetImage('lib/assets/User-Profile-PNG.png')),
+                CircleAvatar(
+                    maxRadius: 40,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage:
+                        NetworkImage(wokerdata['profileImageUrl'])),
+              ]),
               Padding(
                   padding: const EdgeInsets.only(
                       right: 8, top: 8, bottom: 8, left: 15),
@@ -101,9 +110,18 @@ class Cardformainlistview extends StatelessWidget {
             widget:
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               const SizedBox(width: 11),
-              CircleAvatar(
-                  maxRadius: 40,
-                  backgroundImage: NetworkImage(workerData['profileImageUrl'])),
+              Stack(children: [
+                const CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage:
+                        AssetImage('lib/assets/User-Profile-PNG.png')),
+                CircleAvatar(
+                    maxRadius: 40,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage:
+                        NetworkImage(workerData['profileImageUrl'])),
+              ]),
               Padding(
                   padding: const EdgeInsets.only(
                       right: 8, top: 8, bottom: 8, left: 15),

@@ -74,6 +74,7 @@ flutter:
     - lib/assets/onboard-second.png
     - lib/assets/logoimaget.png
     - lib/assets/no-data.png
+    - lib/assets/User-Profile-PNG.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

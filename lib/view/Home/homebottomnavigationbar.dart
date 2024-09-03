@@ -54,7 +54,7 @@ class _HomebottomnavigationbarState extends State<Homebottomnavigationbar>
             ),
             bottomNavigationBar: Container(
                 margin: EdgeInsets.all(displaywidth * .05),
-                height: displaywidth * .155,
+                height: displaywidth * .050,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -79,7 +79,7 @@ class _HomebottomnavigationbarState extends State<Homebottomnavigationbar>
                         child: Stack(children: [
                           Customeanimatedcontainer(
                               width: index == appstate.currentindex
-                                  ? displaywidth * 0.42
+                                  ? displaywidth * 0.22
                                   : displaywidth * 0.18,
                               child: AnimatedContainer(
                                   duration: const Duration(seconds: 2),
@@ -88,7 +88,7 @@ class _HomebottomnavigationbarState extends State<Homebottomnavigationbar>
                                       ? displaywidth * 0.13
                                       : 0,
                                   width: index == appstate.currentindex
-                                      ? displaywidth * 0.42
+                                      ? displaywidth * 0.22
                                       : 0,
                                   decoration: BoxDecoration(
                                       color: index == appstate.currentindex
@@ -99,7 +99,7 @@ class _HomebottomnavigationbarState extends State<Homebottomnavigationbar>
                           Customeanimatedcontainer(
                               width: index == appstate.currentindex
                                   ? displaywidth * 0.43
-                                  : displaywidth * 0.22,
+                                  : displaywidth * 0.32,
                               child: Stack(children: [
                                 Row(children: [
                                   Customeanimatedcontainer(
@@ -127,7 +127,7 @@ class _HomebottomnavigationbarState extends State<Homebottomnavigationbar>
                                           ? displaywidth * 0.3
                                           : 20),
                                   Icon(listoficon[index],
-                                      size: displaywidth * 0.076,
+                                      size: displaywidth * 0.056,
                                       color: index == appstate.currentindex
                                           ? Colors.white
                                           : Colors.black)

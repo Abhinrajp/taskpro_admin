@@ -33,6 +33,22 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    // Set the Flutter web renderer if needed
+    if (window.flutterWebRenderer) {
+      console.warn('window.flutterWebRenderer is deprecated. Use engineInitializer.initializeEngine() instead.');
+    }
+
+    // Initialize the Flutter engine
+    if (window.engineInitializer) {
+      window.engineInitializer.initializeEngine({
+        // You can add configuration options here if needed
+      });
+    }
+  </script>
   <script src="flutter_bootstrap.js" async></script>
+  <script type="text/javascript">
+    window.flutterWebRenderer = "html";
+  </script>
 </body>
 </html>
